@@ -58,46 +58,55 @@ namespace Lagebeziehungen
             double[] veka = new double[3];
             double[] vekb = new double[3];
             double[] vekc = new double[3];
+            bool fehlerAufgetreten = false;
 
             for (int i = 0; i < 3; i++)
             {
                 if (double.TryParse(textBoxesEingabeVektoren[i].Text, out veka[i]) == false)
                 {
-                    MessageBox.Show("falsche Eingabe", "Fehler");
+                    MessageBox.Show("falsche Eingabe in Vektor a", "Fehler");
+                    fehlerAufgetreten = true;
                 }
                 if (double.TryParse(textBoxesEingabeVektoren[i + 3].Text, out vekb[i]) == false)
                 {
-                    MessageBox.Show("falsche Eingabe", "Fehler");
+                    MessageBox.Show("falsche Eingabe in Vektor b", "Fehler");
+                    fehlerAufgetreten = true;
                 }
                 if (double.TryParse(textBoxesEingabeVektoren[i + 6].Text, out vekc[i]) == false)
                 {
-                    MessageBox.Show("falsche Eingabe", "Fehler");
+                    MessageBox.Show("falsche Eingabe in Vektor c", "Fehler");
+                    fehlerAufgetreten = true;
                 }
             }
+            if (fehlerAufgetreten)
+            {
+                MessageBox.Show("Bitte Eingabe korrigieren!","Eingabefehler");
+            }
+            else
+            {
+                //Beträge berechnen
+                double Ba, Bb, Bc;
+                Ba = Math.Sqrt(veka[0] * veka[0] + veka[1] * veka[1] + veka[2] * veka[2]);
+                Bb = Math.Sqrt(vekb[0] * vekb[0] + vekb[1] * vekb[1] + vekb[2] * vekb[2]);
+                Bc = Math.Sqrt(vekc[0] * vekc[0] + vekc[1] * vekc[1] + vekc[2] * vekc[2]);
+                //Skalarprodukt
+                double skalarproduktAB = veka[0] * vekb[0] + veka[1] * vekb[1] + veka[2] * vekb[2];
+                //Kreuzprodukt
+                double[] kreuzproduktAB = new double[3];
+                kreuzproduktAB[0] = veka[1] * vekb[2] - veka[2] * vekb[1];
+                kreuzproduktAB[1] = veka[2] * vekb[0] - veka[0] * vekb[2];
+                kreuzproduktAB[2] = veka[0] * vekb[1] - veka[1] * vekb[0];
+                //Spatprodukt
+                double spatprodukt = vekc[0] * kreuzproduktAB[0] + vekc[1] * kreuzproduktAB[1] + vekc[2] * kreuzproduktAB[2];
 
-            //Beträge berechnen
-            double Ba, Bb, Bc;
-            Ba = Math.Sqrt(veka[0]*veka[0]+ veka[1] * veka[1] + veka[2] * veka[2] );
-            Bb = Math.Sqrt(vekb[0]*vekb[0]+ vekb[1] * vekb[1] + vekb[2] * vekb[2] );
-            Bc = Math.Sqrt(vekc[0]*vekc[0]+ vekc[1] * vekc[1] + vekc[2] * vekc[2] );
-            //Skalarprodukt
-            double skalarproduktAB = veka[0] * vekb[0] + veka[1] * vekb[1] + veka[2] * vekb[2];
-            //Kreuzprodukt
-            double[] kreuzproduktAB = new double[3];
-            kreuzproduktAB[0] = veka[1] * vekb[2] - veka[2] * vekb[1];
-            kreuzproduktAB[1] = veka[2] * vekb[0] - veka[0] * vekb[2];
-            kreuzproduktAB[2] = veka[0] * vekb[1] - veka[1] * vekb[0];
-            //Spatprodukt
-            double spatprodukt = vekc[0] * kreuzproduktAB[0] + vekc[1] * kreuzproduktAB[1] + vekc[2] * kreuzproduktAB[2];
-
-            //Ausgabe
-            TB_Ba.Text = Ba.ToString();
-            TB_Bb.Text = Bb.ToString();
-            TB_Bc.Text = Bc.ToString();
-            TB_SP.Text = skalarproduktAB.ToString();
-            TB_SPP.Text = spatprodukt.ToString();
-            TB_VP.Text = "( "+ kreuzproduktAB[0] + "|" + kreuzproduktAB[1] + "|" + kreuzproduktAB[2] + " )";
-            
+                //Ausgabe
+                TB_Ba.Text = Ba.ToString();
+                TB_Bb.Text = Bb.ToString();
+                TB_Bc.Text = Bc.ToString();
+                TB_SP.Text = skalarproduktAB.ToString();
+                TB_SPP.Text = spatprodukt.ToString();
+                TB_VP.Text = "( " + kreuzproduktAB[0] + "|" + kreuzproduktAB[1] + "|" + kreuzproduktAB[2] + " )";
+            }
         }
     }
 }
