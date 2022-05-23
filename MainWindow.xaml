@@ -4,54 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lagebeziehungen"
+        xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
             <TabItem Header="Vektoren">
                 <Grid x:Name="Grid_Vektoren">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <TextBox Grid.Row="0" Grid.Column="2" Text="Vektoren" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="0" Text="Vektor a=" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="2" Text="Vektor b=" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="4" Text="Vektor c=" IsReadOnly="True" TextAlignment="Center"/>
-                    <Button x:Name="Berechnen" Content="Berechnen" Grid.Column="2" Grid.Row="4" Click="Berechnen_Click"/>
-                    <TextBox Grid.Row="6" Grid.Column="2" Text="Ergebnisse:" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="7" Grid.Column="0" Text="Betrag von Vektor a:" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="Betrag von Vektor b:" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="7" Grid.Column="2" Text="Betrag von Vektor c:" IsReadOnly="True" TextAlignment="Center"/>
-                    <TextBox Grid.Row="7" Grid.Column="3" Text="Skalarprodukt von a und b:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="7" Grid.Column="4" Text="Kreuzprodukt von a und b:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="7" Grid.Column="5" Text="Spatprodukt von c, a und b:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="8" Grid.Column="0" x:Name="TB_Ba" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="TB_Bb" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="8" Grid.Column="2" x:Name="TB_Bc" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="8" Grid.Column="3" x:Name="TB_SP" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="8" Grid.Column="4" x:Name="TB_VP" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
-                    <TextBox Grid.Row="8" Grid.Column="5" x:Name="TB_SPP" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+
+                    <controls:FormulaControl Formula="\vec{a}=" Margin="22,93,705,266" />
+                    <TextBox HorizontalAlignment="Left" Margin="61,70,0,0" TextWrapping="Wrap" Text="{Binding Path=vecA.X, Mode=TwoWay}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="61,93,0,0" TextWrapping="Wrap" Text="{Binding vecA.Y}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="61,116,0,0" TextWrapping="Wrap" Text="{Binding vecA.Z}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+
+                    <controls:FormulaControl Formula="\vec{b}=" Margin="124,89,571,271" />
+                    <TextBox HorizontalAlignment="Left" Margin="168,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="168,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="168,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+
+                    <controls:FormulaControl Formula="\vec{c}=" Margin="244,91,451,271" />
+                    <TextBox HorizontalAlignment="Left" Margin="288,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="288,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="288,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Punkt-Gerade">
                 <Grid>
-                    
+                   
                 </Grid>
             </TabItem>
             <TabItem Header="Gerade-Gerade">
