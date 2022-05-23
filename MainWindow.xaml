@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Lagebeziehungen"
         xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
         mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
@@ -13,9 +14,9 @@
                 <Grid x:Name="Grid_Vektoren">
 
                     <controls:FormulaControl Formula="\vec{a}=" Margin="22,93,705,266" />
-                    <TextBox HorizontalAlignment="Left" Margin="61,70,0,0" TextWrapping="Wrap" Text="{Binding Path=vecA.X, Mode=TwoWay}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
-                    <TextBox HorizontalAlignment="Left" Margin="61,93,0,0" TextWrapping="Wrap" Text="{Binding vecA.Y}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
-                    <TextBox HorizontalAlignment="Left" Margin="61,116,0,0" TextWrapping="Wrap" Text="{Binding vecA.Z}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="61,70,0,0" TextWrapping="Wrap" Text="{Binding VekAX}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="61,93,0,0" TextWrapping="Wrap" Text="{Binding VekAY}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
+                    <TextBox HorizontalAlignment="Left" Margin="61,116,0,0" TextWrapping="Wrap" Text="{Binding VekAZ}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
 
                     <controls:FormulaControl Formula="\vec{b}=" Margin="124,89,571,271" />
                     <TextBox HorizontalAlignment="Left" Margin="168,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
