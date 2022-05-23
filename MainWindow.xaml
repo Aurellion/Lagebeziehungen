@@ -9,33 +9,49 @@
     <Grid>
         <TabControl>
             <TabItem Header="Vektoren">
-                <Grid>
-                    <Label Content="Vektoren" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="a=" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tb_ax" HorizontalAlignment="Left" Height="23" Margin="40,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" PreviewTextInput="ZahlenEingabePrüfung"/>
-                    <TextBox x:Name="tb_ay" HorizontalAlignment="Left" Height="23" Margin="40,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <TextBox x:Name="tb_az" HorizontalAlignment="Left" Height="23" Margin="40,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <Label Content="b=" HorizontalAlignment="Left" Margin="103,75,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tb_bx" HorizontalAlignment="Left" Height="23" Margin="132,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <TextBox x:Name="tb_bz" HorizontalAlignment="Left" Height="23" Margin="132,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <TextBox x:Name="tb_by" HorizontalAlignment="Left" Height="23" Margin="132,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <Label Content="|a|=" HorizontalAlignment="Left" Margin="296,51,0,0" VerticalAlignment="Top"/>
-                    <Label Content="|b|=" HorizontalAlignment="Left" Margin="296,82,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tb_abs_a" HorizontalAlignment="Left" Height="23" Margin="332,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-                    <TextBox x:Name="tb_abs_b" HorizontalAlignment="Left" Height="23" Margin="332,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-                    <Button Content="Berechnen" HorizontalAlignment="Left" Margin="607,79,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="Button_Click"/>
-                    <Label Content="c=" HorizontalAlignment="Left" Margin="187,75,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tb_cz" HorizontalAlignment="Left" Height="23" Margin="214,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <TextBox x:Name="tb_cy" HorizontalAlignment="Left" Height="23" Margin="214,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <TextBox x:Name="tb_cx" HorizontalAlignment="Left" Height="23" Margin="214,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-                    <Label Content="|c|=" HorizontalAlignment="Left" Margin="296,110,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tb_abs_c" HorizontalAlignment="Left" Height="23" Margin="332,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
-
+                <Grid x:Name="Grid_Vektoren">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox Grid.Row="0" Grid.Column="2" Text="Vektoren" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" Text="Vektor a=" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" Text="Vektor b=" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="4" Text="Vektor c=" IsReadOnly="True" TextAlignment="Center"/>
+                    <Button x:Name="Berechnen" Content="Berechnen" Grid.Column="2" Grid.Row="4" Click="Berechnen_Click"/>
+                    <TextBox Grid.Row="6" Grid.Column="2" Text="Ergebnisse:" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="7" Grid.Column="0" Text="Betrag von Vektor a:" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="Betrag von Vektor b:" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="7" Grid.Column="2" Text="Betrag von Vektor c:" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="7" Grid.Column="3" Text="Skalarprodukt von a und b:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="7" Grid.Column="4" Text="Kreuzprodukt von a und b:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="7" Grid.Column="5" Text="Spatprodukt von c, a und b:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="0" x:Name="TB_Ba" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="TB_Bb" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="2" x:Name="TB_Bc" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="3" x:Name="TB_SP" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="4" x:Name="TB_VP" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="5" x:Name="TB_SPP" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Punkt-Gerade">
                 <Grid>
-
+                    
                 </Grid>
             </TabItem>
             <TabItem Header="Gerade-Gerade">
