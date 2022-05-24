@@ -17,19 +17,19 @@
                     <TextBox HorizontalAlignment="Left" Margin="61,70,0,0" TextWrapping="Wrap" Text="{Binding VekAX}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                     <TextBox HorizontalAlignment="Left" Margin="61,93,0,0" TextWrapping="Wrap" Text="{Binding VekAY}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                     <TextBox HorizontalAlignment="Left" Margin="61,116,0,0" TextWrapping="Wrap" Text="{Binding VekAZ}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
-                    <controls:FormulaControl Formula="\vec{|a|}=" Margin="17,140,678,222" />
+                    <controls:FormulaControl Formula="|\vec{a}|=" Margin="17,140,678,222" />
 
                     <controls:FormulaControl Formula="\vec{b}=" Margin="124,89,571,271" />
                     <TextBox HorizontalAlignment="Left" Margin="168,71,0,0" TextWrapping="Wrap" Text="{Binding VekBX}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                     <TextBox HorizontalAlignment="Left" Margin="168,94,0,0" TextWrapping="Wrap" Text="{Binding VekBY}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                     <TextBox HorizontalAlignment="Left" Margin="168,117,0,0" TextWrapping="Wrap" Text="{Binding VekBZ}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
-                    <controls:FormulaControl Formula="\vec{|b|}=" Margin="124,140,571,222" />
+                    <controls:FormulaControl Formula="|\vec{b}|=" Margin="124,140,571,222" />
 
                     <controls:FormulaControl Formula="\vec{c}=" Margin="244,91,451,271" />
                     <TextBox HorizontalAlignment="Left" Margin="288,71,0,0" TextWrapping="Wrap" Text="{Binding VekCX}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                     <TextBox HorizontalAlignment="Left" Margin="288,94,0,0" TextWrapping="Wrap" Text="{Binding VekCY}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
                     <TextBox HorizontalAlignment="Left" Margin="288,117,0,0" TextWrapping="Wrap" Text="{Binding VekCZ}" VerticalAlignment="Top" Width="55" PreviewTextInput="ZahlenEingabePrüfung"/>
-                    <controls:FormulaControl Formula="\vec{|c|}=" Margin="244,140,451,222" />
+                    <controls:FormulaControl Formula="|\vec{c}|=" Margin="244,140,451,222" />
                     <TextBox x:Name="tb_Ba" HorizontalAlignment="Left" Margin="61,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>
                     <TextBox x:Name="tb_Bb" HorizontalAlignment="Left" Margin="168,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>
                     <TextBox x:Name="tb_Bc" HorizontalAlignment="Left" Margin="288,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>

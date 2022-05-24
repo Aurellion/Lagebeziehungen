@@ -173,6 +173,7 @@ namespace Lagebeziehungen
             tb_Ba.Text = vecA.Length().ToString();
             tb_Bb.Text = vecB.Length().ToString();
             tb_Bc.Text = vecC.Length().ToString();
+            
         }
     }
 }
