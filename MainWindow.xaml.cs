@@ -24,56 +24,115 @@ namespace Lagebeziehungen
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window//, INotifyPropertyChanged
     {
-        private double vekAX = 0;
-        public double VekAX
+        Vector3 vecA = Vector3.Zero;
+        Vector3 vecB = Vector3.Zero;
+        Vector3 vecC = Vector3.Zero;
+
+        
+        public float VekAX
         { 
-            get
-            { 
-                return vekAX;
-            } 
+            get { return vecA.X; } 
             set 
             {
-                if (value == vekAX) return;
-                vekAX = value;
-                NotifyPropertyChanged(nameof(VekAX));
+                if (value == vecA.X) return;                
+                vecA.X = value;
+                //NotifyPropertyChanged(nameof(VekAX));
             } 
         }
-        private double vekAY = 0;
-        public double VekAY
+        public float VekAY
         { 
-            get
-            { 
-                return vekAY;
-            } 
+            get { return vecA.Y; } 
             set 
             {
-                if (value == vekAY) return;
-                vekAY = value;
+                if (value == vecA.Y) return;                
+                vecA.Y = value;
+                //NotifyPropertyChanged(nameof(VekAX));
             } 
         }
-        private double vekAZ = 0;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public double VekAZ
+        public float VekAZ
         { 
-            get
-            { 
-                return vekAZ;
-            } 
+            get { return vecA.Z; } 
             set 
             {
-                if (value == vekAZ) return;
-                vekAZ = value;
+                if (value == vecA.Z) return;                
+                vecA.Z = value;
+                //NotifyPropertyChanged(nameof(VekAX));
             } 
         }
 
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        public float VekBX
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get { return vecB.Y; }
+            set
+            {
+                if (value == vecB.Y) return;
+                vecA.Y = value;
+                //NotifyPropertyChanged(nameof(VekAY));
+            }
         }
+        public float VekBY
+        {
+            get { return vecB.Y; }
+            set
+            {
+                if (value == vecB.Y) return;
+                vecB.Y = value;
+                //NotifyPropertyChBnged(nBmeof(VekBY));
+            }
+        }
+        public float VekBZ
+        {
+            get { return vecB.Z; }
+            set
+            {
+                if (value == vecB.Z) return;
+                vecB.Z = value;
+                //NotifyPropertyChBnged(nBmeof(VekBY));
+            }
+        }
+
+        public float VekCX
+        {
+            get { return vecC.Y; }
+            set
+            {
+                if (value == vecC.Y) return;
+                vecC.Y = value;
+                //NotifyPropertyChanged(nameof(VekCY));
+            }
+        }
+        public float VekCY
+        {
+            get { return vecC.Y; }
+            set
+            {
+                if (value == vecC.Y) return;
+                vecC.Y = value;
+                //NotifyPropertyChCnged(nCmeof(VekCY));
+            }
+        }
+        public float VekCZ
+        {
+            get { return vecC.Z; }
+            set
+            {
+                if (value == vecC.Z) return;
+                vecC.Z = value;
+                //NotifyPropertyChCnged(nCmeof(VekCY));
+            }
+        }
+
+
+
+
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
         public MainWindow()
         {
