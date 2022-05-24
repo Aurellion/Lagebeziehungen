@@ -38,7 +38,6 @@ namespace Lagebeziehungen
             {
                 if (value == vecA.X) return;                
                 vecA.X = value;
-                //VekAX = value;
                 NotifyPropertyChanged(nameof(VekAX));
             } 
         }
