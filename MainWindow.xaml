@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lagebeziehungen"
         mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
@@ -29,6 +30,18 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    <TextBox Text="{Binding VekAX}" Grid.Column="1" Grid.Row="1" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekAY}" Grid.Column="1" Grid.Row="2" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekAZ}" Grid.Column="1" Grid.Row="3" PreviewTextInput="ZahlenEingabePrüfung" />
+
+                    <TextBox Text="{Binding VekBX}" Grid.Column="3" Grid.Row="1" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekBY}" Grid.Column="3" Grid.Row="2" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekBZ}" Grid.Column="3" Grid.Row="3" PreviewTextInput="ZahlenEingabePrüfung" />
+
+                    <TextBox Text="{Binding VekCX}" Grid.Column="5" Grid.Row="1" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekCY}" Grid.Column="5" Grid.Row="2" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekCZ}" Grid.Column="5" Grid.Row="3" PreviewTextInput="ZahlenEingabePrüfung" />
+
                     <TextBox Grid.Row="0" Grid.Column="2" Text="Vektoren" IsReadOnly="True" TextAlignment="Center"/>
                     <TextBox Grid.Row="2" Grid.Column="0" Text="Vektor a=" IsReadOnly="True" TextAlignment="Center"/>
                     <TextBox Grid.Row="2" Grid.Column="2" Text="Vektor b=" IsReadOnly="True" TextAlignment="Center"/>
@@ -50,8 +63,48 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Punkt-Gerade">
-                <Grid>
-                    
+                <Grid>    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox Text="{Binding VekAX}" Grid.Column="1" Grid.Row="1" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekAY}" Grid.Column="1" Grid.Row="2" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekAZ}" Grid.Column="1" Grid.Row="3" PreviewTextInput="ZahlenEingabePrüfung" />
+
+                    <TextBox Text="{Binding VekBX}" Grid.Column="3" Grid.Row="1" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekBY}" Grid.Column="3" Grid.Row="2" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekBZ}" Grid.Column="3" Grid.Row="3" PreviewTextInput="ZahlenEingabePrüfung" />
+
+                    <TextBox Text="{Binding VekCX}" Grid.Column="5" Grid.Row="1" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekCY}" Grid.Column="5" Grid.Row="2" PreviewTextInput="ZahlenEingabePrüfung" />
+                    <TextBox Text="{Binding VekCZ}" Grid.Column="5" Grid.Row="3" PreviewTextInput="ZahlenEingabePrüfung" />
+
+                    <TextBox Grid.Row="0" Grid.Column="2" Text="Punkte" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" Text="Punkt P=" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" Text="Punkt A=" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="4" Text="Punkt B=" IsReadOnly="True" TextAlignment="Center"/>
+                    <Button x:Name="Berechnen1" Content="Berechnen" Grid.Column="2" Grid.Row="4" Click="Berechnen_Click"/>
+                    <TextBox Grid.Row="6" Grid.Column="2" Text="Ergebnisse:" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="7" Grid.Column="0" Text="Gleichung der Geraden g durch A und B:" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="7" Grid.Column="2" Text="Abstand von P zu g:" IsReadOnly="True" TextAlignment="Center"/>
+                    <TextBox Grid.Row="8" Grid.Column="0" x:Name="TB_g" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBox Grid.Row="8" Grid.Column="2" x:Name="TB_Abstand" Text="" IsReadOnly="True" TextAlignment="Center" TextWrapping="Wrap"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Gerade-Gerade">
