@@ -64,11 +64,11 @@ namespace Lagebeziehungen
 
         public float VekBX
         {
-            get { return vecB.Y; }
+            get { return vecB.X; }
             set
             {
-                if (value == vecB.Y) return;
-                vecA.Y = value;
+                if (value == vecB.X) return;
+                vecB.X = value;
                 //NotifyPropertyChanged(nameof(VekAY));
             }
         }
@@ -79,7 +79,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecB.Y) return;
                 vecB.Y = value;
-                //NotifyPropertyChBnged(nBmeof(VekBY));
+                //NotifyPropertyChanged(nameof(VekBY));
             }
         }
         public float VekBZ
@@ -89,16 +89,16 @@ namespace Lagebeziehungen
             {
                 if (value == vecB.Z) return;
                 vecB.Z = value;
-                //NotifyPropertyChBnged(nBmeof(VekBY));
+                //NotifyPropertyChanged(nameof(VekBY));
             }
         }
 
         public float VekCX
         {
-            get { return vecC.Y; }
+            get { return vecC.X; }
             set
             {
-                if (value == vecC.Y) return;
+                if (value == vecC.X) return;
                 vecC.Y = value;
                 //NotifyPropertyChanged(nameof(VekCY));
             }
@@ -110,7 +110,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecC.Y) return;
                 vecC.Y = value;
-                //NotifyPropertyChCnged(nCmeof(VekCY));
+                //NotifyPropertyChanged(nameof(VekCY));
             }
         }
         public float VekCZ
@@ -120,7 +120,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecC.Z) return;
                 vecC.Z = value;
-                //NotifyPropertyChCnged(nCmeof(VekCY));
+                //NotifyPropertyChanged(nameof(VekCY));
             }
         }
 
@@ -148,13 +148,6 @@ namespace Lagebeziehungen
             //* 1 oder beliebig
         }
 
-        private void Berechnen_Click(object sender, RoutedEventArgs e)
-        {
-
-
-
-        }
-
         private double Skalarprodukt(Vector3 vecA, Vector3 vecB)
         {
             Vector3 vecBuff = vecA * vecB;
@@ -175,6 +168,11 @@ namespace Lagebeziehungen
             return Skalarprodukt(vecA, Kreuzprodukt(vecB, vecC));
         }
 
-
+        private void bt_berechne_Click(object sender, RoutedEventArgs e)
+        {
+            tb_Ba.Text = vecA.Length().ToString();
+            tb_Bb.Text = vecB.Length().ToString();
+            tb_Bc.Text = vecC.Length().ToString();
+        }
     }
 }
