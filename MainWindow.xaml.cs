@@ -24,7 +24,7 @@ namespace Lagebeziehungen
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window//, INotifyPropertyChanged
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         Vector3 vecA = new Vector3(1, 0, 0);
         Vector3 vecB = new Vector3(0, 2, 0);
@@ -38,7 +38,8 @@ namespace Lagebeziehungen
             {
                 if (value == vecA.X) return;                
                 vecA.X = value;
-                //NotifyPropertyChanged(nameof(VekAX));
+                //VekAX = value;
+                NotifyPropertyChanged(nameof(VekAX));
             } 
         }
         public float VekAY
@@ -48,7 +49,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecA.Y) return;                
                 vecA.Y = value;
-                //NotifyPropertyChanged(nameof(VekAX));
+                NotifyPropertyChanged(nameof(VekAX));
             } 
         }
         public float VekAZ
@@ -58,7 +59,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecA.Z) return;                
                 vecA.Z = value;
-                //NotifyPropertyChanged(nameof(VekAX));
+                NotifyPropertyChanged(nameof(VekAX));
             } 
         }
 
@@ -69,7 +70,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecB.X) return;
                 vecB.X = value;
-                //NotifyPropertyChanged(nameof(VekAY));
+                NotifyPropertyChanged(nameof(VekAY));
             }
         }
         public float VekBY
@@ -79,7 +80,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecB.Y) return;
                 vecB.Y = value;
-                //NotifyPropertyChanged(nameof(VekBY));
+                NotifyPropertyChanged(nameof(VekBY));
             }
         }
         public float VekBZ
@@ -89,7 +90,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecB.Z) return;
                 vecB.Z = value;
-                //NotifyPropertyChanged(nameof(VekBY));
+                NotifyPropertyChanged(nameof(VekBY));
             }
         }
 
@@ -100,7 +101,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecC.X) return;
                 vecC.X = value;
-                //NotifyPropertyChanged(nameof(VekCY));
+                NotifyPropertyChanged(nameof(VekCY));
             }
         }
         public float VekCY
@@ -110,7 +111,7 @@ namespace Lagebeziehungen
             {
                 if (value == vecC.Y) return;
                 vecC.Y = value;
-                //NotifyPropertyChanged(nameof(VekCY));
+                NotifyPropertyChanged(nameof(VekCY));
             }
         }
         public float VekCZ
@@ -120,21 +121,21 @@ namespace Lagebeziehungen
             {
                 if (value == vecC.Z) return;
                 vecC.Z = value;
-                //NotifyPropertyChanged(nameof(VekCY));
+                NotifyPropertyChanged(nameof(VekCY));
             }
         }
 
 
 
 
-        //public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        //private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -175,7 +176,7 @@ namespace Lagebeziehungen
             tb_Ba.Text = vecA.Length().ToString();
             tb_Bb.Text = vecB.Length().ToString();
             tb_Bc.Text = vecC.Length().ToString();
-            vecA.X = 77;
+            VekAX = 77;
             
         }
         
