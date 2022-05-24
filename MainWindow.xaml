@@ -34,12 +34,16 @@
                     <TextBox x:Name="tb_Bb" HorizontalAlignment="Left" Margin="168,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>
                     <TextBox x:Name="tb_Bc" HorizontalAlignment="Left" Margin="288,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>
                     <Button x:Name="bt_berechne" Content="Berechnen" HorizontalAlignment="Left" Margin="662,88,0,0" VerticalAlignment="Top" Click="bt_berechne_Click"/>
+                    <TextBox x:Name="tb_SPAB"  HorizontalAlignment="Left" Margin="84,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56" IsReadOnly="True"/>
+                    <TextBox x:Name="tb_SPAC"  HorizontalAlignment="Left" Margin="84,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56" IsReadOnly="True"/>
+                    <TextBox x:Name="tb_SPBC"  HorizontalAlignment="Left" Margin="84,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56" IsReadOnly="True"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Punkt-Gerade">
-                <Grid>
+                <Canvas x:Name="huhu">
+                    
 
-                </Grid>
+                </Canvas>
             </TabItem>
             <TabItem Header="Gerade-Gerade">
                 <Grid>

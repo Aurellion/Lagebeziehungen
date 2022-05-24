@@ -26,11 +26,11 @@ namespace Lagebeziehungen
     /// </summary>
     public partial class MainWindow : Window//, INotifyPropertyChanged
     {
-        Vector3 vecA = Vector3.Zero;
-        Vector3 vecB = Vector3.Zero;
-        Vector3 vecC = Vector3.Zero;
+        Vector3 vecA = new Vector3(1, 0, 0);
+        Vector3 vecB = new Vector3(0, 2, 0);
+        Vector3 vecC = new Vector3(0, 0, 1);
 
-        
+
         public float VekAX
         { 
             get { return vecA.X; } 
@@ -99,7 +99,7 @@ namespace Lagebeziehungen
             set
             {
                 if (value == vecC.X) return;
-                vecC.Y = value;
+                vecC.X = value;
                 //NotifyPropertyChanged(nameof(VekCY));
             }
         }
@@ -134,11 +134,13 @@ namespace Lagebeziehungen
         //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         //}
 
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
+       
 
         private void ZahlenEingabePrüfung(object sender, TextCompositionEventArgs e)
         {
@@ -173,7 +175,9 @@ namespace Lagebeziehungen
             tb_Ba.Text = vecA.Length().ToString();
             tb_Bb.Text = vecB.Length().ToString();
             tb_Bc.Text = vecC.Length().ToString();
+            vecA.X = 77;
             
         }
+        
     }
 }
